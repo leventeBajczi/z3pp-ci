@@ -16,8 +16,8 @@ jobs:
 
       - name: Install necessary software
         run: |
-          apt-get update && \
-          apt-get -y --no-install-recommends install \
+          sudo apt-get update && \
+          sudo apt-get -y --no-install-recommends install \
           cmake \
           make \
           clang \
@@ -35,7 +35,7 @@ jobs:
 
       - name: Build
         run: |
-          cd build && make && sudo make install
+          cd build && make -j && sudo make install
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
