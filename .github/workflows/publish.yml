@@ -35,7 +35,7 @@ jobs:
 
       - name: Build
         run: |
-          cd build && make -j && sudo make install
+          cd build && make && sudo make install
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
